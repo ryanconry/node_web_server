@@ -4,6 +4,7 @@ const fs = require('fs')
 
 //"nodemon server.js -e js,hbs" to watch all js and hbs file extensions in project
 
+const port = process.env.PORT || 3000;            //heroku will set port, if run locally then 3000
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');  //set directory for handlebar partials
@@ -51,6 +52,6 @@ app.get('/bad', (req,res) => {
   });
 })
 
-app.listen(3000, () => {
-  console.log('Server is up on port 3000');
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
 });
