@@ -21,10 +21,10 @@ app.use((req,res,next)=> {                        //set up logger middleware
   next();                                         //call next to return
 })
 
-app.use((req,res,next) => {                       //set up maintenance middleware
-  res.render('maintenance.hbs');
-  next();
-});
+// app.use((req,res,next) => {                       //set up maintenance middleware
+//   res.render('maintenance.hbs');
+//   next();
+// });
 
 app.use(express.static(__dirname + '/public'));   //static takes absolute path to what you want to serve up
 
